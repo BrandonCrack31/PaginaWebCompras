@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluciones Electromecánicas</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4404/4404856.png" />
+  <style>
+    .seccion {
+      display: none;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+    /* Ajuste para el botón "Volver a Proyectos" */
+    .btn-volver {
+      margin-top: 60px; /* Subir el botón */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Soluciones Electromecánicas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto me-5">
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="mostrarSeccion('bienvenida')">Inicio</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="scmDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Avance SCM
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="scmDropdown">
+              <li><a class="dropdown-item" href="#" onclick="mostrarSeccion('scmVisualizar')">Visualizar SCM's</a></li>
+              <li><a class="dropdown-item" href="#" onclick="mostrarSeccion('scmAvance')">Visualizar Avance</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="ocDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Avance OC
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="ocDropdown">
+              <li><a class="dropdown-item" href="#">Visualizar OC's</a></li>
+              <li><a class="dropdown-item" href="#">Visualizar Avance</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección de bienvenida -->
+  <div id="bienvenida" class="container mt-5">
+    <h1 class="text-center mb-4">Bienvenido</h1>
+    <p class="text-center">Aquí podrás visualizar el avance de materiales por proyecto.</p>
+  </div>
+
+  <!-- Sección Visualizar SCM -->
+  <div id="scmVisualizar" class="container mt-5 seccion">
+    <h2 class="mb-4">Proyectos - Solicitudes de Compra de Material</h2>
+    <p>Selecciona un proyecto para visualizar sus SCM's:</p>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <!-- Proyecto Monito -->
+      <div class="col">
+        <div class="card h-100 shadow-sm border-primary">
+          <div class="card-body text-primary">
+            <h5 class="card-title">🐒 Proyecto Monito</h5>
+            <p class="card-text mb-1"><strong>Ingeniero:</strong> Ronald Mora</p>
+            <p class="card-text mb-3"><strong>Ubicación:</strong> Tamarindo, Guanacaste</p>
+            <a href="#" class="btn btn-outline-primary" onclick="mostrarSeccion('scmMonito')">Ver SCM's</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto Sport Complex -->
+      <div class="col">
+        <div class="card h-100 shadow-sm border-success">
+          <div class="card-body text-success">
+            <h5 class="card-title">🏟️ Sport Complex</h5>
+            <p class="card-text mb-1"><strong>Ingeniero:</strong> Por definir</p>
+            <p class="card-text mb-3"><strong>Ubicación:</strong> San José, Costa Rica</p>
+            <a href="#" class="btn btn-outline-primary" onclick="mostrarSeccion('scmSportComplex')">Ver SCM's</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección Ver SCM Monito -->
+  <div id="scmMonito" class="container mt-5 seccion">
+    <h2 class="mb-4">SCM's - Proyecto Monito</h2>
+    <p>A continuación se muestran las solicitudes de compra almacenadas en Google Drive:</p>
+    <iframe src="https://drive.google.com/embeddedfolderview?id=1N98CqWsskcNHyhQ7-ehT66-Obo-KXOtt#grid"></iframe>
+    <button class="btn btn-primary btn-volver" onclick="mostrarSeccion('scmVisualizar')">Volver a Proyectos</button>
+  </div>
+
+  <!-- Sección Ver Sport Complex -->
+  <div id="scmSportComplex" class="container mt-5 seccion">
+    <h2 class="mb-4">SCM's - Proyecto Sport Complex</h2>
+    <p>A continuación se muestran las solicitudes de compra almacenadas en Google Drive:</p>
+    <iframe src="https://drive.google.com/embeddedfolderview?id=16vnKccD87NSaoVWHq_xvP1pGBSoCtM9B#grid"></iframe>
+    <button class="btn btn-primary btn-volver" onclick="mostrarSeccion('scmVisualizar')">Volver a Proyectos</button>
+  </div>
+
+  <!-- Sección Visualizar Avance -->
+  <!-- Sección Visualizar Avance -->
+<div id="scmAvance" class="container mt-5 seccion">
+  <h2 class="mb-4">Avance de SCM's por Proyecto</h2>
+  <p>Selecciona un proyecto para visualizar su avance:</p>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <!-- Proyecto Monito -->
+    <div class="col">
+      <div class="card h-100 shadow-sm border-primary">
+        <div class="card-body text-primary">
+          <h5 class="card-title">🐒 Proyecto Monito</h5>
+          <p class="card-text mb-1"><strong>Ingeniero:</strong> Ronald Mora</p>
+          <p class="card-text mb-3"><strong>Ubicación:</strong> Tamarindo, Guanacaste</p>
+          <a href="#" class="btn btn-outline-primary" onclick="mostrarSeccion('scmAvanceMonito')">Ver Avance</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyecto Sport Complex -->
+    <div class="col">
+      <div class="card h-100 shadow-sm border-success">
+        <div class="card-body text-success">
+          <h5 class="card-title">🏟️ Sport Complex</h5>
+          <p class="card-text mb-1"><strong>Ingeniero:</strong> Por definir</p>
+          <p class="card-text mb-3"><strong>Ubicación:</strong> San José, Costa Rica</p>
+          <a href="#" class="btn btn-outline-primary" onclick="mostrarSeccion('scmAvanceSportComplex')">Ver Avance</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function mostrarSeccion(seccionId) {
+      const secciones = document.querySelectorAll('.seccion, #bienvenida');
+      secciones.forEach(seccion => seccion.style.display = 'none');
+      document.getElementById(seccionId).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
